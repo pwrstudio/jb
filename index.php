@@ -27,7 +27,7 @@
   <?php $current = new WP_Query( $args ); ?>
     <?php while ( $current->have_posts() ) : $current->the_post(); ?>
       <?php $image = get_field('intro_image' ); ?>
-      <a href="menu"><div class="intro-image-container" style="background-image:url(<?php echo $image['url']?>)"></div></a>
+      <a href="menu"><div class="intro-image-container" style="background-image:url(<?php echo $image['url']?>), url(<?php echo $image['sizes']['pwr-small']?>)"></div></a>
   <?php endwhile; wp_reset_query(); ?>
   
 <?php get_footer(); ?>    
