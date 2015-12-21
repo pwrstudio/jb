@@ -9,8 +9,8 @@
       imagesCounter = 0,
       i = 0;
 
-    $('.image-list-container').find('li').each(function () {
-      images.push($(this).data("src"));
+    $('.image-list-container').find('img').each(function () {
+      images.push($(this).attr("src"));
       captions.push($(this).data("alt"));
     });
 

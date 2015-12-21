@@ -304,6 +304,12 @@ header {
   float: right;
 }
 
+.no-show {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
 //MOBILE PHONE
 @media only screen and (max-width: 768px) {
   .container-fluid {

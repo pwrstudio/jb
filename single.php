@@ -12,14 +12,12 @@
   <div class="caption"></div>
 
   <div class="image-list-container">
-    <ol>
       <?php if( have_rows('images') ): ?>
         <?php while ( have_rows('images') ) : the_row(); ?>
           <?php $image = get_sub_field('image'); ?>
-          <li data-src="<?php echo $image['sizes']['pwr-large']; ?>" data-alt="<?php echo the_sub_field('caption'); ?>"></li>
+          <img src="<?php echo $image['sizes']['pwr-large']; ?>" data-alt="<?php echo the_sub_field('caption'); ?>" class='no-show'>
         <?php endwhile; ?>
       <?php endif; ?>
-    </ol>
   </div>
     
 <?php get_footer(); ?>    

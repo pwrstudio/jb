@@ -4,7 +4,20 @@
 
   <div class='inner-header'>
     <div id='name' class='left'>Jürgen Beck</div>
-    <div id='current' class='right'>Current: Helmhaus Zürich Datum etc. (ext. link)</div>
+    <div id='current' class='right'>
+      
+      <?php $args = array(
+      'post_type'		=> 'page',
+      'pagename' => 'current',
+      'posts_per_page'	=> 1
+      ); ?>
+
+      <?php $current = new WP_Query( $args ); ?>
+      <?php while ( $current->have_posts() ) : $current->the_post(); ?>
+        <?php the_content(); ?>
+      <?php endwhile; wp_reset_query(); ?>
+    
+    </div>
   </div>
 
   <div class='project-menu'> 
