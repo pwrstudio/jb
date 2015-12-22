@@ -31,9 +31,15 @@
 
     <?php while ( $current->have_posts() ) : $current->the_post(); ?>
 
-      <a href='<?php echo get_permalink(); ?>' class='menu-item'>
-        <?php echo get_the_title(); ?>
-      </a>
+      <?php if(get_field('post_type') == 'Link'): ?>
+        <a href='<?php echo get_field('link'); ?>' class='menu-item' target=_blank>
+          <?php echo get_the_title(); ?>
+        </a>
+      <?php else:?>
+        <a href='<?php echo get_permalink(); ?>' class='menu-item'>
+          <?php echo get_the_title(); ?>
+        </a>
+      <?php endif;?>
 
     <?php endwhile; wp_reset_query(); ?>
   

@@ -266,12 +266,12 @@ em {
 
 .previous {
   left: 0%;
-  cursor: w-resize;
+  cursor: url('img/left.png'), w-resize;
 }
 
 .next {
   left: 50%;
-  cursor: e-resize;
+  cursor: url('img/right.png'), e-resize;
 }
 
 header {
@@ -342,5 +342,24 @@ header {
     left: 0%;
     width: 100%;
     cursor: e-resize;
+  }
+  .right {
+    float: left;
+  }
+  .left {
+    display: block;
+    width: 100%;
+    margin-bottom: $base-line;
+  }
+  .caption {
+    left: $margin / 2;
+  }
+  header {
+    margin: $margin / 2;
+    width: calc(100% - 50px);
+  }
+  .container-menu {
+    margin: $margin / 2;
+    width: calc(100% - 50px);
   }
 }
