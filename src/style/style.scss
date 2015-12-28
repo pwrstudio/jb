@@ -158,7 +158,6 @@ body {
   background: $background-color;
 }
 
-div,
 nav,
 img {
   user-select: none;
@@ -212,10 +211,6 @@ em {
   }
 }
 
-.image-container-inner {
-  position: relative;
-}
-
 .shown {
   display: block !important;
 }
@@ -237,8 +232,13 @@ em {
     break-inside: avoid;
     margin-bottom: $base-line;
     max-width: 20em;
-    ;
   }
+}
+
+p {
+  break-inside: avoid;
+  margin-bottom: $base-line;
+  max-width: 35em;
 }
 
 .menu-item {
@@ -266,12 +266,14 @@ em {
 
 .previous {
   left: 0%;
-  cursor: url('img/left.png'), w-resize;
+  //  cursor: url('img/left.png'), w-resize;
+  cursor: w-resize;
 }
 
 .next {
   left: 50%;
-  cursor: url('img/right.png'), e-resize;
+  //  cursor: url('img/right.png'), e-resize;
+  cursor: e-resize;
 }
 
 header {
@@ -349,7 +351,6 @@ header {
   .left {
     display: block;
     width: 100%;
-    margin-bottom: $base-line;
   }
   .caption {
     left: $margin / 2;

@@ -29,5 +29,16 @@
       <?php $image = get_field('intro_image' ); ?>
       <a href="menu"><div class="intro-image-container" style="background-image:url(<?php echo $image['url']?>), url(<?php echo $image['sizes']['pwr-small']?>)"></div></a>
   <?php endwhile; wp_reset_query(); ?>
+
+  <?php $args = array(
+  'post_type'		=> 'page',
+  'pagename' => 'intro-text',
+  'posts_per_page'	=> 1
+  ); ?>
+
+  <?php $current = new WP_Query( $args ); ?>
+  <?php while ( $current->have_posts() ) : $current->the_post(); ?>
+      <div class="caption"><?php the_content();?></div>
+  <?php endwhile; wp_reset_query(); ?>
   
 <?php get_footer(); ?>    
