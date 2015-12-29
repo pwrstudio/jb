@@ -24,29 +24,29 @@ add_action( 'wp_enqueue_scripts', 'pwrstudio_template_scripts' );
 // DISABLE STUFF
 
 //Disable RSS Feeds functions
-add_action('do_feed', array( $this, 'disabler_kill_rss' ), 1);
-add_action('do_feed_rdf', array( $this, 'disabler_kill_rss' ), 1);
-add_action('do_feed_rss', array( $this, 'disabler_kill_rss' ), 1);
-add_action('do_feed_rss2', array( $this, 'disabler_kill_rss' ), 1);
-add_action('do_feed_atom', array( $this, 'disabler_kill_rss' ), 1);
-if(function_exists('disabler_kill_rss')) {
-	function disabler_kill_rss(){
-		wp_die( _e("No feeds available.", 'ippy_dis') );
-	}
-}
+//add_action('do_feed', array( $this, 'disabler_kill_rss' ), 1);
+//add_action('do_feed_rdf', array( $this, 'disabler_kill_rss' ), 1);
+//add_action('do_feed_rss', array( $this, 'disabler_kill_rss' ), 1);
+//add_action('do_feed_rss2', array( $this, 'disabler_kill_rss' ), 1);
+//add_action('do_feed_atom', array( $this, 'disabler_kill_rss' ), 1);
+//if(function_exists('disabler_kill_rss')) {
+//	function disabler_kill_rss(){
+//		wp_die( _e("No feeds available.", 'ippy_dis') );
+//	}
+//}
 
 //Remove feed link from header
 remove_action( 'wp_head', 'feed_links_extra', 3 ); //Extra feeds such as category feeds
 remove_action( 'wp_head', 'feed_links', 2 ); // General feeds: Post and Comment Feed
 
 // Disable json api
-add_filter('rest_jsonp_enabled', '_return_false');
-remove_action( 'wp_head', 'rest_output_link_wp_head', 10 );
-remove_action( 'wp_head', 'wp_oembed_add_discovery_links', 10 );
+# add_filter('rest_jsonp_enabled', '_return_false');
+# remove_action( 'wp_head', 'rest_output_link_wp_head', 10 );
+# remove_action( 'wp_head', 'wp_oembed_add_discovery_links', 10 );
 
 // Remove the Link header for the WP REST API
 // [link] => <http://www.example.com/wp-json/>; rel="https://api.w.org/"
-remove_action( 'template_redirect', 'rest_output_link_header', 11, 0 );
+# remove_action( 'template_redirect', 'rest_output_link_header', 11, 0 );
 
 
 function pu_remove_script_version( $src ){
@@ -90,5 +90,5 @@ add_action( 'after_setup_theme', 'image_size_setup' );
 function image_size_setup() {
     add_image_size( 'pwr-small', 500 );
     add_image_size( 'pwr-medium', 800 );
-    add_image_size( 'pwr-large', 1600 );
+    add_image_size( 'pwr-large', 1400 );
 }

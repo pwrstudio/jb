@@ -186,7 +186,7 @@ em {
 }
 
 .caption {
-  bottom: $base-line;
+  bottom: $base-line + 10px;
   z-index: 1000;
   left: $margin;
   position: fixed;
@@ -314,6 +314,9 @@ header {
 
 //MOBILE PHONE
 @media only screen and (max-width: 768px) {
+  body {
+    line-height: 1.3 * $base-line;
+  }
   .container-fluid {
     padding-left: $base-line;
   }
@@ -347,6 +350,7 @@ header {
   }
   .right {
     float: left;
+    width: 100%;
   }
   .left {
     display: block;
@@ -355,9 +359,14 @@ header {
   .caption {
     left: $margin / 2;
   }
+  .caption-mobile {
+    position: static;
+    display: block;
+    margin-top: 2 * $base-line;
+  }
   header {
     margin: $margin / 2;
-    width: calc(100% - 50px);
+    position: absolute;
   }
   .container-menu {
     margin: $margin / 2;
